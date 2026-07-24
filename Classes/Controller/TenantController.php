@@ -189,10 +189,11 @@ final class TenantController
         }
         $elements = is_array($body['elements'] ?? null) ? $body['elements'] : [];
         $pages = is_array($body['pages'] ?? null) ? $body['pages'] : [];
+        $records = is_array($body['records'] ?? null) ? $body['records'] : [];
         $wipe = !array_key_exists('wipe', $body) || (bool)$body['wipe'];
 
         try {
-            $result = $this->contentSeeder->seed($slug, $elements, $wipe, $pages);
+            $result = $this->contentSeeder->seed($slug, $elements, $wipe, $pages, $records);
         } catch (\Throwable $e) {
             return new JsonResponse(['error' => 'seed_failed', 'message' => $e->getMessage()], 500);
         }
@@ -205,6 +206,7 @@ final class TenantController
             'wiped' => $result['wiped'],
             'pages_seeded' => $result['pages_seeded'] ?? 0,
             'pages_wiped' => $result['pages_wiped'] ?? 0,
+            'records_seeded' => $result['records_seeded'] ?? 0,
         ]);
     }
 
