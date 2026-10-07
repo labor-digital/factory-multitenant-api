@@ -15,6 +15,12 @@ All routes live under `/api/multitenant`. JSON in, JSON out. Bearer auth.
 | `GET` | `/tenants/{slug}` | One tenant. |
 | `POST` | `/tenants` | Create a tenant. Wraps `factory:tenant:provision`. |
 | `PATCH` | `/tenants/{slug}` | Update capabilities (`active_components`, `active_record_types`, `settings`). Atomic rewrite of `factory.json` + cache invalidate; takes effect immediately on the worker handling the PATCH. |
+| `POST` | `/tenants/{slug}/content` | Seed content (elements, pages, records) via factory-core's `TenantContentSeeder`. |
+| `DELETE` | `/tenants/{slug}` | Retire a tenant via factory-core's `TenantRetirementService`. |
+
+The API uses the standard `Authorization` header, so it **must stay outside any HTTP
+Basic Auth** in front of TYPO3 — a request can carry Bearer or Basic, not both. The
+deploy repo protects `/typo3/*` only for exactly this reason.
 
 ## Activation
 
