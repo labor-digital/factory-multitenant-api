@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.4](https://bitbucket.org/labor-digital/labor-factory-app/branches/compare/factory-multitenant-api-v1.0.4%0Dfactory-multitenant-api-v1.0.3#diff) (2026-10-09)
+
+
+### Bug Fixes
+
+* **ci:** TYPO3 changelog headings carry their version ([37fb024](https://bitbucket.org/labor-digital/labor-factory-app/commits/37fb02443c41a59185c2f99567493660bb320a4b))
+
+
+
 ## [1.0.3](https://bitbucket.org/labor-digital/labor-factory-app/branches/compare/factory-multitenant-api-v1.0.3%0Dfactory-multitenant-api-v1.0.2#diff) (2026-10-09)
 
 
